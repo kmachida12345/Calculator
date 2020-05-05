@@ -16,6 +16,15 @@
         tools:context=".MainActivity">
 
         <TextView
+            android:id="@+id/text_formula"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{viewModel.formula}"
+            app:layout_constraintBottom_toTopOf="@+id/text_result"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+        <TextView
             android:id="@+id/text_result"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -23,7 +32,7 @@
             app:layout_constraintBottom_toTopOf="@+id/layout_grid"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/text_formula" />
 
         <GridLayout
             android:id="@+id/layout_grid"
@@ -40,6 +49,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="fill"
                 android:layout_columnWeight="1"
+                android:onClick="@{(v) -> viewModel.onNumButtonClicked(v)}"
                 android:text="@string/num_one"
                 />
             <Button
@@ -64,6 +74,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="fill"
                 android:layout_columnWeight="1"
+                android:onClick="@{(v) -> viewModel.onOperatorButtonClicked(v)}"
                 android:text="@string/ope_addition"
                 />
             <Button
