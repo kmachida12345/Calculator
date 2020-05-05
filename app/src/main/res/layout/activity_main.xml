@@ -58,6 +58,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="fill"
                 android:layout_columnWeight="1"
+                android:onClick="@{(v) -> viewModel.onNumButtonClicked(v)}"
                 android:text="@string/num_two"
                 />
             <Button
@@ -66,6 +67,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="fill"
                 android:layout_columnWeight="1"
+                android:onClick="@{(v) -> viewModel.onNumButtonClicked(v)}"
                 android:text="@string/num_three"
                 />
             <Button
@@ -83,6 +85,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="fill"
                 android:layout_columnWeight="1"
+                android:onClick="@{(v) -> viewModel.onNumButtonClicked(v)}"
                 android:text="@string/num_four"
                 />
             <Button
@@ -91,6 +94,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="fill"
                 android:layout_columnWeight="1"
+                android:onClick="@{(v) -> viewModel.onNumButtonClicked(v)}"
                 android:text="@string/num_five"
                 />
             <Button
@@ -99,6 +103,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="fill"
                 android:layout_columnWeight="1"
+                android:onClick="@{(v) -> viewModel.onNumButtonClicked(v)}"
                 android:text="@string/num_six"
                 />
             <Button
@@ -107,6 +112,7 @@
                 android:layout_gravity="fill"
                 android:layout_columnWeight="1"
                 android:layout_height="wrap_content"
+                android:onClick="@{(v) -> viewModel.onOperatorButtonClicked(v)}"
                 android:text="@string/ope_subtraction"
                 />
             <Button
@@ -115,6 +121,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="fill"
                 android:layout_columnWeight="1"
+                android:onClick="@{(v) -> viewModel.onNumButtonClicked(v)}"
                 android:text="@string/num_seven"
                 />
             <Button
@@ -123,6 +130,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="fill"
                 android:layout_columnWeight="1"
+                android:onClick="@{(v) -> viewModel.onNumButtonClicked(v)}"
                 android:text="@string/num_eight"
                 />
             <Button
@@ -131,6 +139,7 @@
                 android:layout_gravity="fill"
                 android:layout_columnWeight="1"
                 android:layout_height="wrap_content"
+                android:onClick="@{(v) -> viewModel.onNumButtonClicked(v)}"
                 android:text="@string/num_nine"
                 />
 
@@ -140,6 +149,7 @@
                 android:layout_gravity="fill"
                 android:layout_columnWeight="1"
                 android:layout_height="wrap_content"
+                android:onClick="@{(v) -> viewModel.onOperatorButtonClicked(v)}"
                 android:text="@string/ope_division"
                 />
 
@@ -149,6 +159,7 @@
                 android:layout_gravity="fill"
                 android:layout_columnWeight="1"
                 android:layout_height="wrap_content"
+                android:onClick="@{(v) -> viewModel.onNumButtonClicked(v)}"
                 android:text="@string/num_zero"
                 />
             <Button
@@ -157,6 +168,7 @@
                 android:layout_gravity="fill"
                 android:layout_columnWeight="1"
                 android:layout_height="wrap_content"
+                android:onClick="@{(v) -> viewModel.onNumButtonClicked(v)}"
                 android:text="@string/button_text_point"
                 />
             <Button
@@ -165,6 +177,7 @@
                 android:layout_gravity="fill"
                 android:layout_columnWeight="1"
                 android:layout_height="wrap_content"
+                android:onClick="@{(v) -> viewModel.onOperatorButtonClicked(v)}"
                 android:text="@string/ope_equal"
                 />
 
@@ -174,6 +187,7 @@
                 android:layout_gravity="fill"
                 android:layout_columnWeight="1"
                 android:layout_height="wrap_content"
+                android:onClick="@{(v) -> viewModel.onOperatorButtonClicked(v)}"
                 android:text="@string/ope_multiplication"
                 />
 
