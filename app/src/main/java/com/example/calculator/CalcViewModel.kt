@@ -7,4 +7,12 @@ class CalcViewModel: ViewModel() {
     var answer: Double = 0.0
     var operand: Double = 0.0
 
+    fun calc(){
+        when (operator){
+            "+" -> answer += operand
+            "-" -> answer -= operand
+            "/" -> answer /= operand
+            "*" -> answer *= operand
+        }
+    }
 }
