@@ -23,20 +23,30 @@ class CalcViewModel: ViewModel() {
     val response: LiveData<CalcData>
         get() = _contents
 
-
+    /**
+     * 計算処理
+     * 保持している演算子をもとに計算を行う
+     * 1つ前の計算結果と入力値を計算し結果を保持する
+     * layoutに通知(=そのまま表示される)まで行う
+     * */
     private fun calc(){
         Log.d("hoge", "calc() called")
         when (calcData.operator){
-            "+" -> calcData.tmpAnswer = calcData.answer + calcData.operand.toDouble()
-            "-" -> calcData.tmpAnswer = calcData.answer - calcData.operand.toDouble()
-            "/" -> calcData.tmpAnswer = calcData.answer / calcData.operand.toDouble()
-            "*" -> calcData.tmpAnswer = calcData.answer * calcData.operand.toDouble()
-            else -> calcData.tmpAnswer = calcData.operand.toDouble()
+            "+" -> calcData.answer = calcData.prevAnswer + calcData.operand.toDouble()
+            "-" -> calcData.answer = calcData.prevAnswer - calcData.operand.toDouble()
+            "/" -> calcData.answer = calcData.prevAnswer / calcData.operand.toDouble()
+            "*" -> calcData.answer = calcData.prevAnswer * calcData.operand.toDouble()
+            else -> calcData.answer = calcData.operand.toDouble()
         }
         _contents.postValue(calcData)
-        Log.d("hoge", "calc() operand=${calcData.operand},answer=${calcData.answer}")
+        Log.d("hoge", "calc() operand=${calcData.operand},answer=${calcData.prevAnswer}")
     }
 
+    /**
+     * 数字ボタンのクリックリスナ
+     * リアルタイムで計算結果を表示させるため
+     * ボタン押下のたび計算を実行している
+     * */
     fun onNumButtonClicked(num: View){
         Log.d("hoge", "onNumButtonClicked() called")
         val button = num as Button
@@ -49,6 +59,12 @@ class CalcViewModel: ViewModel() {
         Log.d("hoge", "onNumButtonClicked() ${calcData.formula}, ${button.text.toString()}")
     }
 
+    /**
+     * 演算子ボタンのクリックリスナ
+     * 押下されたとき
+     * 1.保持している計算結果を1つ前の結果として保持
+     * 2.保持している演算子をリセット
+     * */
     fun onOperatorButtonClicked(ope: View){
         Log.d("hoge", "onOperatorButtonClicked() called")
         val button = ope as Button
@@ -57,7 +73,7 @@ class CalcViewModel: ViewModel() {
         calcData.operator = button.text.toString()
 
         calcData.operand = "0"
-        calcData.answer = calcData.tmpAnswer
+        calcData.prevAnswer = calcData.answer
         Log.d("hoge", "onOperatorButtonClicked() ${calcData.formula}, ${button.text.toString()}")
     }
 }

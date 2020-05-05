@@ -28,7 +28,7 @@
             android:id="@+id/text_result"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{Double.toString(viewModel.response.tmpAnswer)}"
+            android:text="@{Double.toString(viewModel.response.answer)}"
             app:layout_constraintBottom_toTopOf="@+id/layout_grid"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
