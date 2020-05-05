@@ -13,6 +13,7 @@ class CalcViewModel: ViewModel() {
     // このデータクラスが通知されるのだけど
     // パフォーマンス的にどうなのかしら
     // 必要な変数だけLiveDataにするほうがいいのかな
+    // TODO: DI導入
     val calcData = CalcData()
 
     // 双方向データバインディングの実装
